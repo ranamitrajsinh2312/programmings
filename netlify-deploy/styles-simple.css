@@ -1,0 +1,576 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background: #fff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    color: #333;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.header-content h1 i {
+    color: #666;
+    margin-right: 0.5rem;
+}
+
+.header-content p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.sidebar-toggle {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.2s ease;
+    display: none;
+}
+
+.sidebar-toggle:hover {
+    background: #555;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 320px;
+    height: calc(100vh - 100px);
+    background: #fff;
+    border-right: 1px solid #e0e0e0;
+    overflow-y: auto;
+    z-index: 999;
+    transition: transform 0.3s ease;
+    padding: 0;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    background: #333;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar-header h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+/* Category Sections */
+.category-section {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.category-title {
+    background: #f8f8f8;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.category-title:hover {
+    background: #f0f0f0;
+}
+
+.category-title i {
+    margin-right: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.problem-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.category-section.active .problem-list {
+    max-height: 1000px;
+}
+
+.problem-item {
+    padding: 0.7rem 2rem;
+    color: #555;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f5f5f5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.problem-item:hover {
+    background: #f8f8f8;
+    color: #333;
+    padding-left: 2.2rem;
+}
+
+.problem-item.active {
+    background: #f0f0f0;
+    color: #333;
+    font-weight: 500;
+    border-left: 3px solid #333;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 320px;
+    padding: 120px 2rem 2rem;
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+.content-section {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* Welcome Section Styles */
+.welcome-container h2 {
+    color: #333;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.welcome-container h2 i {
+    color: #666;
+    margin-right: 0.5rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 2rem;
+    text-align: center;
+    transition: background 0.2s ease;
+}
+
+.stat-card:hover {
+    background: #f8f8f8;
+}
+
+.stat-card i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.stat-card h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.stat-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Feature Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.feature-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem;
+}
+
+.feature-card i {
+    font-size: 2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.feature-card p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.feature-card ul {
+    color: #666;
+    margin-left: 1.2rem;
+}
+
+.feature-card li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Getting Started Section */
+.getting-started {
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.getting-started h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.getting-started h3 i {
+    color: #666;
+    margin-right: 0.5rem;
+}
+
+.getting-started ol {
+    color: #666;
+    margin-left: 1.5rem;
+}
+
+.getting-started li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.getting-started code {
+    background: #f0f0f0;
+    padding: 0.2rem 0.4rem;
+    font-family: 'Consolas', monospace;
+    font-size: 0.9rem;
+    color: #333;
+    border: 1px solid #d0d0d0;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background: #f8f8f8;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.breadcrumb-item {
+    color: #666;
+}
+
+.breadcrumb-item.active {
+    color: #333;
+    font-weight: 500;
+}
+
+.breadcrumb i {
+    margin: 0 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Problem Content Styles */
+.problem-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.problem-header h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.problem-meta {
+    display: flex;
+    gap: 1rem;
+}
+
+.difficulty,
+.category {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid #d0d0d0;
+    background: #f8f8f8;
+    color: #333;
+}
+
+.problem-content > div {
+    margin-bottom: 2rem;
+}
+
+.problem-content h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.problem-content h3 i {
+    margin-right: 0.5rem;
+    color: #666;
+}
+
+.problem-description {
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem;
+}
+
+.problem-description p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Code Section Styles */
+.code-container {
+    position: relative;
+    background: #f5f5f5;
+    border: 1px solid #d0d0d0;
+}
+
+.code-header {
+    background: #e8e8e8;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #d0d0d0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.copy-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: #555;
+}
+
+.code-container pre {
+    margin: 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+    background: #fff;
+    border: none;
+}
+
+.code-container code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Output Section Styles */
+.output-container {
+    background: #2a2a2a;
+    color: #0f0;
+    padding: 1.5rem;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border: 1px solid #333;
+    overflow-x: auto;
+}
+
+.output-container pre {
+    margin: 0;
+    color: inherit;
+    background: transparent;
+}
+
+/* Complexity Section Styles */
+.complexity-section {
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem;
+}
+
+.complexity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.complexity-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.complexity-card h4 {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.complexity-card h4 i {
+    margin-right: 0.5rem;
+    color: #666;
+}
+
+.complexity-card p {
+    color: #666;
+    font-family: 'Consolas', monospace;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: 80px 1rem 1rem;
+    }
+    
+    .sidebar-toggle {
+        display: block;
+    }
+    
+    .header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .header-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header-content p {
+        display: none;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .complexity-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .problem-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .difficulty,
+    .category {
+        display: inline-block;
+        width: fit-content;
+    }
+}

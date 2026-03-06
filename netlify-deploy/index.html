@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Problems Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 3rem;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .feature h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            margin: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+        
+        .button:hover {
+            background: #555;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 2rem 1rem;
+                margin: 1rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1><i class="fas fa-code"></i> Java Programming Problems</h1>
+            <p>Complete Collection of 70+ Programming Problems with Solutions</p>
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Categories</h2>
+        </div>
+        
+        <div class="category-section active">
+            <div class="category-title" onclick="toggleCategory(this.parentElement)">
+                <i class="fas fa-play-circle"></i> Basic Programming (01-20)
+            </div>
+            <div class="problem-list">
+                <div class="problem-item" onclick="showProblem('problem01')">01. Prime Number</div>
+                <div class="problem-item" onclick="showProblem('problem02')">02. Factorial</div>
+                <div class="problem-item" onclick="showProblem('problem03')">03. Even/Odd Count</div>
+                <div class="problem-item" onclick="showProblem('problem04')">04. Even/Odd Checker</div>
+                <div class="problem-item" onclick="showProblem('problem05')">05. Palindrome Number</div>
+                <div class="problem-item" onclick="showProblem('problem06')">06. Fibonacci Series</div>
+                <div class="problem-item" onclick="showProblem('problem07')">07. Armstrong Number</div>
+                <div class="problem-item" onclick="showProblem('problem08')">08. Perfect Number</div>
+                <div class="problem-item" onclick="showProblem('problem09')">09. Sum of Digits</div>
+                <div class="problem-item" onclick="showProblem('problem10')">10. Reverse Number</div>
+                <div class="problem-item" onclick="showProblem('problem11')">11. Simple Calculator</div>
+                <div class="problem-item" onclick="showProblem('problem12')">12. GCD</div>
+                <div class="problem-item" onclick="showProblem('problem13')">13. LCM</div>
+                <div class="problem-item" onclick="showProblem('problem14')">14. Multiplication Table</div>
+                <div class="problem-item" onclick="showProblem('problem15')">15. Happy Number</div>
+                <div class="problem-item" onclick="showProblem('problem16')">16. Pronic Number</div>
+                <div class="problem-item" onclick="showProblem('problem17')">17. Automorphic Number</div>
+                <div class="problem-item" onclick="showProblem('problem18')">18. Ugly Number</div>
+                <div class="problem-item" onclick="showProblem('problem19')">19. Karpekar Number</div>
+                <div class="problem-item" onclick="showProblem('problem20')">20. Decimal to Octal</div>
+            </div>
+        </div>
+
+        <div class="category-section active">
+            <div class="category-title" onclick="toggleCategory(this.parentElement)">
+                <i class="fas fa-list"></i> Array Operations (21-40)
+            </div>
+            <div class="problem-list">
+                <div class="problem-item" onclick="showProblem('problem21')">21. Linear Search</div>
+                <div class="problem-item" onclick="showProblem('problem22')">22. Binary Search</div>
+                <div class="problem-item" onclick="showProblem('problem23')">23. Selection Sort</div>
+                <div class="problem-item" onclick="showProblem('problem24')">24. Find Duplicates</div>
+                <div class="problem-item" onclick="showProblem('problem25')">25. Merge Arrays</div>
+                <div class="problem-item" onclick="showProblem('problem26')">26. Reverse Array</div>
+                <div class="problem-item" onclick="showProblem('problem27')">27. Average of Array</div>
+                <div class="problem-item" onclick="showProblem('problem28')">28. Min/Max Array</div>
+                <div class="problem-item" onclick="showProblem('problem29')">29. Second Largest</div>
+                <div class="problem-item" onclick="showProblem('problem30')">30. Remove Duplicates</div>
+                <div class="problem-item" onclick="showProblem('problem31')">31. Is Array Sorted</div>
+                <div class="problem-item" onclick="showProblem('problem32')">32. Common Elements</div>
+                <div class="problem-item" onclick="showProblem('problem33')">33. Array Intersection</div>
+                <div class="problem-item" onclick="showProblem('problem34')">34. Shift Array</div>
+                <div class="problem-item" onclick="showProblem('problem35')">35. Shift Array by Key</div>
+                <div class="problem-item" onclick="showProblem('problem36')">36. Sum of Array</div>
+                <div class="problem-item" onclick="showProblem('problem37')">37. Reverse Array Elements</div>
+                <div class="problem-item" onclick="showProblem('problem38')">38. Array Decrease Check</div>
+                <div class="problem-item" onclick="showProblem('problem39')">39. Array Sort Check</div>
+                <div class="problem-item" onclick="showProblem('problem40')">40. Find Single Duplicate</div>
+            </div>
+        </div>
+
+        <div class="category-section active">
+            <div class="category-title" onclick="toggleCategory(this.parentElement)">
+                <i class="fas fa-font"></i> String Operations (41-50)
+            </div>
+            <div class="problem-list">
+                <div class="problem-item" onclick="showProblem('problem41')">41. Anagram String</div>
+                <div class="problem-item" onclick="showProblem('problem42')">42. String Vowel Check</div>
+                <div class="problem-item" onclick="showProblem('problem43')">43. String Length Comparison</div>
+                <div class="problem-item" onclick="showProblem('problem44')">44. Repeat Substring Pattern</div>
+                <div class="problem-item" onclick="showProblem('problem45')">45. String Multiplication</div>
+                <div class="problem-item" onclick="showProblem('problem46')">46. Palindrome Recursive</div>
+                <div class="problem-item" onclick="showProblem('problem47')">47. Decimal to Binary Fraction</div>
+                <div class="problem-item" onclick="showProblem('problem48')">48. Hexadecimal to Decimal</div>
+                <div class="problem-item" onclick="showProblem('problem49')">49. Recursive Power</div>
+                <div class="problem-item" onclick="showProblem('problem50')">50. Insert/Delete Specific</div>
+            </div>
+        </div>
+
+        <div class="category-section active">
+            <div class="category-title" onclick="toggleCategory(this.parentElement)">
+                <i class="fas fa-shapes"></i> Pattern Programs (61-70)
+            </div>
+            <div class="problem-list">
+                <div class="problem-item" onclick="showProblem('problem61')">61. Square Pattern</div>
+                <div class="problem-item" onclick="showProblem('problem62')">62. Diamond Pattern</div>
+                <div class="problem-item" onclick="showProblem('problem63')">63. Floyd's Triangle</div>
+                <div class="problem-item" onclick="showProblem('problem64')">64. Star Triangle Pattern</div>
+                <div class="problem-item" onclick="showProblem('problem65')">65. Number Triangle Pattern</div>
+                <div class="problem-item" onclick="showProblem('problem66')">66. Pascal Triangle</div>
+                <div class="problem-item" onclick="showProblem('problem67')">67. Diamond Pattern 1to1</div>
+                <div class="problem-item" onclick="showProblem('problem68')">68. Even Star Pattern</div>
+                <div class="problem-item" onclick="showProblem('problem69')">69. Reverse Pattern</div>
+                <div class="problem-item" onclick="showProblem('problem70')">70. Circle Number Pattern</div>
+            </div>
+        </div>
+
+        <div class="category-section active">
+            <div class="category-title" onclick="toggleCategory(this.parentElement)">
+                <i class="fas fa-cog"></i> Advanced Problems (71-80)
+            </div>
+            <div class="problem-list">
+                <div class="problem-item" onclick="showProblem('problem71')">71. Chocolate Wrapper</div>
+                <div class="problem-item" onclick="showProblem('problem72')">72. ATM Transaction</div>
+                <div class="problem-item" onclick="showProblem('problem73')">73. Optimal Attack</div>
+                <div class="problem-item" onclick="showProblem('problem74')">74. Weapon System</div>
+                <div class="problem-item" onclick="showProblem('problem75')">75. Difference Calculation</div>
+                <div class="problem-item" onclick="showProblem('problem76')">76. Sathiyo Algorithm</div>
+                <div class="problem-item" onclick="showProblem('problem77')">77. Matrix Multiplication Error</div>
+                <div class="problem-item" onclick="showProblem('problem78')">78. Demo Program</div>
+                <div class="problem-item" onclick="showProblem('problem79')">79. Main Program</div>
+                <div class="problem-item" onclick="showProblem('problem80')">80. AbcD Algorithm</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Welcome Section -->
+        <div class="content-section active" id="welcome">
+            <div class="welcome-container">
+                <h2><i class="fas fa-rocket"></i> Welcome to Java Programming Problems Collection</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-code"></i>
+                        <h3>70+</h3>
+                        <p>Programming Problems</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>5</h3>
+                        <p>Categories</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>3</h3>
+                        <p>Difficulty Levels</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>100%</h3>
+                        <p>Learning Focused</p>
+                    </div>
+                </div>
+                
+                <div class="description">
+                    <h3>About This Collection</h3>
+                    <p>This comprehensive collection contains 70+ carefully organized Java programming problems, ranging from basic concepts to advanced algorithms. Each problem includes complete source code, detailed explanations, and expected outputs.</p>
+                    
+                    <h3>Categories Covered</h3>
+                    <ul class="category-list">
+                        <li><strong>Basic Programming (01-20):</strong> Fundamental concepts like prime numbers, factorial, palindromes, and number theory</li>
+                        <li><strong>Array Operations (21-40):</strong> Searching, sorting, manipulation, and advanced array algorithms</li>
+                        <li><strong>String Operations (41-50):</strong> String manipulation, pattern matching, and text processing</li>
+                        <li><strong>Pattern Programs (61-70):</strong> Various geometric and artistic patterns using loops</li>
+                        <li><strong>Advanced Problems (71-80):</strong> Complex algorithms and real-world applications</li>
+                    </ul>
+                    
+                    <h3>How to Use</h3>
+                    <p>Navigate through the sidebar to explore different categories and problems. Each problem contains:</p>
+                    <ul>
+                        <li>Complete Java source code with syntax highlighting</li>
+                        <li>Problem description and approach</li>
+                        <li>Expected output and examples</li>
+                        <li>Time and space complexity analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Problem Template (will be populated by JavaScript) -->
+        <div class="content-section" id="problemTemplate">
+            <div class="problem-header">
+                <h2 id="problemTitle"></h2>
+                <div class="problem-meta">
+                    <span class="difficulty-badge" id="problemDifficulty"></span>
+                    <span class="category" id="problemCategory"></span>
+                </div>
+            </div>
+            
+            <div class="problem-content">
+                <div class="problem-description">
+                    <h3><i class="fas fa-info-circle"></i> Problem Description</h3>
+                    <p id="problemDesc"></p>
+                </div>
+                
+                <div class="code-section">
+                    <div class="code-header">
+                        <h3><i class="fas fa-code"></i> Java Code</h3>
+                        <button class="copy-btn" onclick="copyCode()">
+                            <i class="fas fa-copy"></i> Copy Code
+                        </button>
+                    </div>
+                    <div class="code-container">
+                        <pre><code class="language-java" id="problemCode"></code></pre>
+                    </div>
+                </div>
+                
+                <div class="output-section">
+                    <h3><i class="fas fa-terminal"></i> Expected Output</h3>
+                    <div class="output-container">
+                        <pre id="problemOutput"></pre>
+                    </div>
+                </div>
+                
+                <div class="complexity-section">
+                    <h3><i class="fas fa-chart-bar"></i> Complexity Analysis</h3>
+                    <div class="complexity-info">
+                        <div class="complexity-item">
+                            <span class="complexity-label">Time Complexity:</span>
+                            <span class="complexity-value" id="timeComplexity"></span>
+                        </div>
+                        <div class="complexity-item">
+                            <span class="complexity-label">Space Complexity:</span>
+                            <span class="complexity-value" id="spaceComplexity"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <!-- Dynamic Problems Data - Auto-generated -->
+    <script src="problems-data.js"></script>
+    <script src="script-complete.js"></script>
+    
+    <!-- Auto-refresh functionality for development -->
+    <script>
+        // Check for updates every 3 seconds during development
+        let lastModified = null;
+        
+        async function checkForUpdates() {
+            try {
+                const response = await fetch('problems-data.js', { method: 'HEAD' });
+                const modified = response.headers.get('Last-Modified');
+                
+                if (lastModified && modified !== lastModified) {
+                    console.log('🔄 Problems data updated, refreshing...');
+                    location.reload();
+                }
+                
+                lastModified = modified;
+            } catch (error) {
+                // Silently handle errors in case server is not available
+            }
+        }
+        
+        // Check for updates during development
+        setInterval(checkForUpdates, 3000);
+        
+        console.log('🎯 Dynamic Java Problems Documentation');
+        console.log('📁 Add .java files to DS folder for automatic inclusion');
+    </script>
+</body>
+</html>
