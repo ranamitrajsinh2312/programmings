@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Problems Collection - Dynamic</title>
+    <link rel="stylesheet" href="styles-simple.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1><i class="fas fa-code"></i> Java Programming Problems</h1>
+            <p>Dynamic Collection - Auto-updates when you add Java files!</p>
+        </div>
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Sidebar Navigation - Dynamically Generated -->
+    <nav class="sidebar" id="sidebar">
+        <!-- Sidebar content will be automatically generated from Java files -->
+        <div class="sidebar-header">
+            <h2>🔄 Loading Problems...</h2>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Welcome Section -->
+        <div class="content-section active" id="welcome">
+            <div class="welcome-container">
+                <h2><i class="fas fa-rocket"></i> Dynamic Java Problems Documentation</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-code"></i>
+                        <h3 id="problemCount">Loading...</h3>
+                        <p>Programming Problems</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-layer-group"></i>
+                        <h3 id="categoryCount">Loading...</h3>
+                        <p>Categories</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Multiple</h3>
+                        <p>Difficulty Levels</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>Auto</h3>
+                        <p>Updates</p>
+                    </div>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-plus-circle"></i>
+                        <h3>Auto-Discovery</h3>
+                        <p>Add new .java files to the DS folder and they'll automatically appear in the documentation</p>
+                        <ul>
+                            <li>Real-time file monitoring</li>
+                            <li>Automatic categorization</li>
+                            <li>Dynamic sidebar generation</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <i class="fas fa-edit"></i>
+                        <h3>Live Updates</h3>
+                        <p>Modify your Java programs and see changes reflected instantly</p>
+                        <ul>
+                            <li>File change detection</li>
+                            <li>Automatic re-parsing</li>
+                            <li>No manual updates needed</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Smart Organization</h3>
+                        <p>Problems are automatically categorized based on their content and naming</p>
+                        <ul>
+                            <li>Basic Programming (01-20)</li>
+                            <li>Array Operations (21-40)</li>
+                            <li>String Operations (41-50)</li>
+                            <li>Pattern Programs (61-70)</li>
+                            <li>Advanced Problems (71-80+)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="getting-started">
+                    <h3><i class="fas fa-play"></i> How to Use</h3>
+                    <ol>
+                        <li><strong>Add Java Files:</strong> Place new .java files in the DS folder</li>
+                        <li><strong>Start File Watcher:</strong> Run <code>node watch-and-update.js</code> in terminal</li>
+                        <li><strong>See Changes:</strong> Refresh this page to see new problems automatically</li>
+                        <li><strong>Browse & Learn:</strong> Click on any problem in the sidebar to view code</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Problem Template (will be populated by JavaScript) -->
+        <div class="content-section" id="problemTemplate" style="display: none;">
+            <div class="breadcrumb">
+                <span class="breadcrumb-item">Java Problems</span>
+                <i class="fas fa-chevron-right"></i>
+                <span class="breadcrumb-item" id="breadcrumbCategory">Category</span>
+                <i class="fas fa-chevron-right"></i>
+                <span class="breadcrumb-item active" id="breadcrumbTitle">Problem Title</span>
+            </div>
+
+            <div class="problem-header">
+                <h2 id="problemTitle">Problem Title</h2>
+                <div class="problem-meta">
+                    <span class="difficulty" id="problemDifficulty">Easy</span>
+                    <span class="category" id="problemCategory">Category</span>
+                </div>
+            </div>
+
+            <div class="problem-content">
+                <div class="problem-description">
+                    <h3><i class="fas fa-info-circle"></i> Problem Description</h3>
+                    <p id="problemDescription">Problem description goes here...</p>
+                </div>
+
+                <div class="code-section">
+                    <h3><i class="fas fa-code"></i> Solution</h3>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Java</span>
+                            <button class="copy-btn" onclick="copyCode()">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                        <pre><code class="language-java" id="problemCode">// Code will be loaded here</code></pre>
+                    </div>
+                </div>
+
+                <div class="output-section">
+                    <h3><i class="fas fa-terminal"></i> Output</h3>
+                    <div class="output-container">
+                        <pre id="problemOutput">Output will be shown here</pre>
+                    </div>
+                </div>
+
+                <div class="complexity-section">
+                    <div class="complexity-grid">
+                        <div class="complexity-card">
+                            <h4><i class="fas fa-clock"></i> Time Complexity</h4>
+                            <p id="timeComplexity">O(1)</p>
+                        </div>
+                        <div class="complexity-card">
+                            <h4><i class="fas fa-memory"></i> Space Complexity</h4>
+                            <p id="spaceComplexity">O(1)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <!-- Dynamic Problems Data - Auto-generated -->
+    <script src="problems-data.js"></script>
+    <script src="script-complete.js"></script>
+    
+    <!-- Auto-refresh functionality for development -->
+    <script>
+        // Update stats once problems are loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                if (typeof problemManager !== 'undefined' && problemManager.problemsData) {
+                    const problemCount = Object.keys(problemManager.problemsData).length;
+                    const categories = [...new Set(Object.values(problemManager.problemsData).map(p => p.category))];
+                    const categoryCount = categories.length;
+                    
+                    document.getElementById('problemCount').textContent = problemCount;
+                    document.getElementById('categoryCount').textContent = categoryCount;
+                }
+            }, 100);
+        });
+        
+        // Check for updates every 3 seconds during development
+        let lastModified = null;
+        
+        async function checkForUpdates() {
+            try {
+                const response = await fetch('problems-data.js', { method: 'HEAD' });
+                const modified = response.headers.get('Last-Modified');
+                
+                if (lastModified && modified !== lastModified) {
+                    console.log('🔄 Problems data updated, refreshing...');
+                    location.reload();
+                }
+                
+                lastModified = modified;
+            } catch (error) {
+                // Silently handle errors in case server is not available
+            }
+        }
+        
+        // Check for updates during development
+        setInterval(checkForUpdates, 3000);
+        
+        console.log('🎯 Dynamic Java Problems Documentation');
+        console.log('📁 Add .java files to DS folder for automatic inclusion');
+        console.log('🔧 Run: node watch-and-update.js to enable auto-updates');
+    </script>
+</body>
+</html>
